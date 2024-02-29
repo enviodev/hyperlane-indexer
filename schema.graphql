@@ -1,0 +1,73 @@
+type EventsSummary {
+  id: ID!
+  mailbox_DefaultHookSet: [Mailbox_DefaultHookSet!]! @derivedFrom(field: "eventsSummary")
+  mailbox_DefaultHookSetCount: BigInt!
+  mailbox_Dispatch: [Mailbox_Dispatch!]! @derivedFrom(field: "eventsSummary")
+  mailbox_DispatchCount: BigInt!
+  mailbox_DispatchId: [Mailbox_DispatchId!]! @derivedFrom(field: "eventsSummary")
+  mailbox_DispatchIdCount: BigInt!
+  mailbox_Initialized: [Mailbox_Initialized!]! @derivedFrom(field: "eventsSummary")
+  mailbox_InitializedCount: BigInt!
+  mailbox_OwnershipTransferred: [Mailbox_OwnershipTransferred!]! @derivedFrom(field: "eventsSummary")
+  mailbox_OwnershipTransferredCount: BigInt!
+  mailbox_Process: [Mailbox_Process!]! @derivedFrom(field: "eventsSummary")
+  mailbox_ProcessCount: BigInt!
+  mailbox_ProcessId: [Mailbox_ProcessId!]! @derivedFrom(field: "eventsSummary")
+  mailbox_ProcessIdCount: BigInt!
+  mailbox_RequiredHookSet: [Mailbox_RequiredHookSet!]! @derivedFrom(field: "eventsSummary")
+  mailbox_RequiredHookSetCount: BigInt!
+}
+
+type Mailbox_DefaultHookSet {
+  id: ID!
+  hook: String!
+  eventsSummary: String!
+}
+
+type Mailbox_Dispatch {
+  id: ID!
+  sender: String!
+  destination: BigInt!
+  recipient: String!
+  message: String!
+  eventsSummary: String!
+}
+
+type Mailbox_DispatchId {
+  id: ID!
+  messageId: String!
+  eventsSummary: String!
+}
+
+type Mailbox_Initialized {
+  id: ID!
+  version: BigInt!
+  eventsSummary: String!
+}
+
+type Mailbox_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+  eventsSummary: String!
+}
+
+type Mailbox_Process {
+  id: ID!
+  origin: BigInt!
+  sender: String!
+  recipient: String!
+  eventsSummary: String!
+}
+
+type Mailbox_ProcessId {
+  id: ID!
+  messageId: String!
+  eventsSummary: String!
+}
+
+type Mailbox_RequiredHookSet {
+  id: ID!
+  hook: String!
+  eventsSummary: String!
+}
